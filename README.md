@@ -11,7 +11,7 @@ kotlin的学习及其使用
  
  3.然后开始和正常建Activity，Fragment一样，只是选择语言时选成Kotlin
 
- 基础部分查看test下的BaseParamTest
+ 基础部分查看test下的BaseParamTest 运行请到稳定版(现在2.3.2)可以运行出来，但是3.0 Canary运行有问题
  
  Android部分查看 java下的 Activity，Fragment等
 
