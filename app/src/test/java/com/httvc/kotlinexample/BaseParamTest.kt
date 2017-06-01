@@ -11,8 +11,7 @@ import org.junit.Test
  */
 class BaseParamTest {
     //可变变量：
-    var x=1  // 自动推断出 `Int` 类型
-
+    var x = 1  // 自动推断出 `Int` 类型
 
 
     @Test
@@ -30,7 +29,15 @@ class BaseParamTest {
         printBy(a, c)
         printSum(a, c)
 
-        print(x++)
+        println(x++)
+        println(compare(a, b))
+        println(compares(a, c))
+
+        forLoop()
+
+        whileLoop()
+
+        println(whenDescribe(111111111111111))
     }
 
 
@@ -52,14 +59,49 @@ class BaseParamTest {
         print("sum of $a and $b is ${a + b}")
     }
 
-    fun compare(a: Int,b: Int): Int{
-        if(a>b){
+    //使用条件表达式
+    fun compare(a: Int, b: Int): Int {
+        if (a > b) {
             return a;
-        }else{
+        } else {
             return b;
         }
     }
 
-    fun compares(a: Int,b: Int)=if(a>b)a else b
+    //使用 if 作为表达式
+    fun compares(a: Int, b: Int) = if (a > b) a else b
+
+    fun forLoop() {
+        //for循环
+        val items = listOf("Apple", "Banana", "kiwi")
+        for (item in items) {
+            println(item)
+        }
+
+        for (index in items.indices) {
+            println("item at $index is ${items[index]}")
+        }
+    }
+
+    //while 循环
+    fun whileLoop() {
+        val items = listOf("apple", "orange", "banana")
+        var index = 0
+        while (index < items.size) {
+            println("item at $index is ${items[index]}")
+            index++
+        }
+    }
+
+    fun whenDescribe(obj: Any): String =
+            when (obj) {
+                1 -> "One"
+                "hello" -> "Greeting"
+                is Long -> "Long"
+                !is String -> "not a string"
+                else -> "Unknown"
+            }
+
+    //
 
 }
