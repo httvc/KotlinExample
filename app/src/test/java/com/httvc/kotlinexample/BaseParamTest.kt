@@ -38,6 +38,8 @@ class BaseParamTest {
         whileLoop()
 
         println(whenDescribe(111111111111111))
+
+        base()
     }
 
 
@@ -102,6 +104,92 @@ class BaseParamTest {
                 else -> "Unknown"
             }
 
-    //
+    fun base(){
+        val oneMillion=1_000_000
+        val creditCardNumber=1234_5678_9012_3456L
+        /**
+         *  ===相当于Java中的==
+         *  ==相当于Java中的equal()
+         *
+         *
+         */
+
+        val a: Int =1000
+
+
+       // println(a is Int);
+        val boxeda: Int? =a
+        val anotherBoxeda: Int? =a
+        println ("10===${boxeda===anotherBoxeda}") //true
+        println(boxeda===anotherBoxeda)//false
+
+        val b: Int =10
+
+
+        //println(b is Int)
+        val boxedb: Int? =b
+        val anotherBoxedb: Int? =b
+        println("1000===${boxedb===anotherBoxedb}")  //true
+        println(boxedb===anotherBoxedb)//true
+        //关于1000和10====中false和true中 是因为缓存-128~127之间的整数，不会生成新的对象，而是从缓存中取出对象。这样可以提高性能
+
+        //if的详细使用
+        val c : Byte =1
+
+        /**
+         * toByte()  Byte
+         * toShort() Short
+         * toInt()    Int
+         * toLong()   Long
+         * toFloat()  Float
+         * toDouble() Double
+         * toChar()   Char
+         */
+        val i : Int =c.toInt();
+
+        val l=1L+3 //Long+Int +>Long
+
+        val x=(8 shl 3)
+        println("有符号左移<<的值：${x}")
+
+        val y=(8 shr 3)
+        println("有符号右移>>的值：${y}")
+
+        val z=(8 ushr 3)
+        println("无符号右移>>>的值：${z}")
+
+       //and(bits) – 位与
+       // or(bits) – 位或
+        //xor(bits) – 位异或
+        //inv() – 位非
+
+        //字符
+        /**
+         * 字符字面值用单引号括起来: '1'。
+         * 特殊字符可以用反斜杠转义。
+         * 支持这几个转义序列：\t、 \b、\n、\r、\'、\"、\\ 和 \$。
+         * 编码其他字符要用 Unicode 转义序列语法：'\uFF00'。
+         */
+        val d : Char ='2'
+        if (d !in '0'..'9')
+            throw IllegalArgumentException("Out of range")
+        println("显示转换为数字${d.toInt()-'0'.toInt()}");
+
+        /**
+         *  字符串
+         *  表达式以美元符（$）开头，由一个简单的名字
+         *  或者用花括号扩起来的任意表达式
+         *  果你需要在原生字符串中表示字面值 $ 字符（它不支持反斜杠转义）
+         */
+        val e=10
+        println("e=$e")
+
+        val f="abc"
+        println("$f.length is ${f.length}")
+
+        val price=""" ${'$'}9.99"""
+        println("价格为$price")
+
+    }
 
 }

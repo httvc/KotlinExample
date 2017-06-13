@@ -13,5 +13,9 @@ public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
+
+        int a=1000;
+        int b=1000;
+        System.out.println(a==b);
     }
 }
